@@ -6,8 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<<<<<<< HEAD
-<h2>Calculadora</h2>
+<h2>parcela</h2>
 
 <form onsubmit="calcular(event)">
     <input type="number" id="preco" placeholder="Preço" required><br><br>
@@ -45,7 +44,7 @@ function calcular(event){
         "Parcela: R$ " + valor.toFixed(2) + "<br><hr>";
 }
 </script>
-=======
+</body>
     
 
 <h2>Calculadora</h2>
