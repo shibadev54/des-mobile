@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-<<<<<<< HEAD
 <h2>Calculadora</h2>
 
 <form onsubmit="calcular(event)">
@@ -45,12 +44,5 @@ function calcular(event){
         "Parcela: R$ " + valor.toFixed(2) + "<br><hr>";
 }
 </script>
-=======
-    
-
-<h2>Calculadora</h2>
-
->>>>>>> 76a3a524a5e859db592914ac0c052dc6c846e4bc
-
 </body>
 </html>
