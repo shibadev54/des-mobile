@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{width: 200px;}
+     p{color: red;}
+    </style>
+</head>
+<body>
+    <!--senha no minimo 6 caracteres e idade deve ser >= 18-->
+<form style="display: flex; flex-direction: column;" onsubmit="enviar(event)">
+    <label>nome:</label>
+    <input id="nome" placeholder="NOME?">
+    <p id="nomeerr"></p>
+
+    <label>email:</label>
+    <input type="email" id="email" placeholder="EMAIL?">
+    <p id="mailerr"></p>
+
+    <label>idade</label>
+    <input id="idade" placeholder="IDADE">
+    <p id="idaderr"></p>
+
+    <label>senha</label>
+    <input id="senha" placeholder="SENHA?">
+    <p id="senhaerr"></p>
+
+    <button type="submit">enviar</button>
+</form>
+
+<script>
+function enviar(event){
+    event.preventDefault();
+const inputs = document.getElementsByTagName("input");
+    const nome = document.getElementById("nome").value;
+    const nomeErr = document.getElementById("nomeerr");
+    const idade=document.getElementById("idade").value;
+    const idaderr=document.getElementById("idaderr");
+    const senha=document.getElementById("senha").value;
+    const senhaerr=document.getElementById("senhaerr");
+   try{
+    if(nome.length <3){
+    throw new Error("nome muito pequeno");
+   }
+   }
+   catch(erro){
+   nomeErr.textContent= erro.message;
+       inputs[0].style.border= "solid red 1px";
+
+   }
+try{
+    if(idade < 18){
+    throw new Error("muito jovem");
+   }
+   }
+   catch(erridade){
+   idaderr.textContent= erridade.message;
+    inputs[2].style.border= "solid red 1px";
+   }
+try{
+    if(senha.length <6){
+    throw new Error("senha curta");
+   }
+   }
+   catch(errsenha){
+    senhaerr.textContent= errsenha.message;
+    inputs[3].style.border= "solid red 1px";
+   }
+}
+
+
+</script>
+</body>
+</html>
