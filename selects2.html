@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Categorias</title>
+
+<style>
+
+    body{
+        font-family: Arial;
+        padding: 20px;
+    }
+
+    select{
+        padding: 8px;
+    }
+
+    #resultado{
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+</style>
+</head>
+
+<body>
+
+<h2>stands</h2>
+
+<select id="categoria">
+
+    <option value="">Selecione um stand</option>
+
+    <option value="whiteAlbum">
+        White Album
+    </option>
+
+    <option value="TW">
+        Za Warudo!
+    </option>
+
+    <option value="Tusk">
+        Tusk
+    </option>
+
+</select>
+
+<p id="resultado"></p>
+
+<script>
+
+let categoria = document.getElementById("categoria");
+
+categoria.addEventListener("change", mostrarCategoria);
+
+function mostrarCategoria(){
+
+    let valor = categoria.value;
+
+    let resultado = document.getElementById("resultado");
+
+    switch(valor){
+
+        case "whiteAlbum":
+
+            resultado.innerHTML =
+            "armadura de gelo que congela o ar em sua volta";
+
+        break;
+
+        case "TW":
+
+            resultado.innerHTML =
+            "mergulhador bombado que para o tempo";
+
+        break;
+
+        case "Tusk":
+
+            resultado.innerHTML =
+            "atira unha que gira e gira as coisas até elas se desintegrarem";
+
+        break;
+
+        default:
+
+            resultado.innerHTML =
+            "Erro: selecione uma categoria válida.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

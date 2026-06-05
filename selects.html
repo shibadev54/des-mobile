@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select JavaScript</title>
+
+<style>
+
+    body{
+        font-family: Arial;
+        padding: 20px;
+    }
+
+    select, button{
+        padding: 8px;
+        margin-top: 10px;
+    }
+
+    #mensagem{
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+</style>
+</head>
+
+<body>
+
+<h2>Escolha uma opção</h2>
+
+<select id="opcoes">
+
+    <option value="">Selecione</option>
+    <option value="html">HTML</option>
+    <option value="css">CSS</option>
+    <option value="js">JavaScript</option>
+
+</select>
+
+<br>
+
+<button id="botao">Verificar</button>
+
+<p id="mensagem"></p>
+
+<script>
+
+let botao = document.getElementById("botao");
+
+botao.addEventListener("click", verificarOpcao);
+
+function verificarOpcao(){
+
+    let valor = document.getElementById("opcoes").value;
+
+    let mensagem = document.getElementById("mensagem");
+
+    if(valor == ""){
+
+        alert("Selecione uma opção válida");
+
+        mensagem.innerHTML = "";
+
+    }
+
+    else if(valor == "html"){
+
+        mensagem.innerHTML = "Você escolheu HTML";
+
+    }
+
+    else if(valor == "css"){
+
+        mensagem.innerHTML = "Você escolheu CSS";
+
+    }
+
+    else if(valor == "js"){
+
+        mensagem.innerHTML = "Você escolheu JavaScript";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
