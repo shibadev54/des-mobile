@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td{
+            border: dotted black 3px;
+        }
+     .livros{
+     background-color: blue;
+     }
+     .pages{ background-color: greenyellow;}
+    </style>
+</head>
+<body>
+   <table>
+        <thead>
+            <tr>
+                <th data-tipo="livro">livros</th> 
+                <th data-tipo="pagina">paginas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-tipo="livro">goldenwind</td>
+                <td data-tipo="pagina">234</td>
+            </tr>
+            <tr>
+                <td data-tipo="livro">stardust cruzaders</td>
+                <td data-tipo="pagina">877</td>
+            </tr>
+            <tr>
+                <td data-tipo="livro">linux avançado</td>
+                <td data-tipo="pagina">345</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const elementosLivros = document.querySelectorAll("[data-tipo='livro']");
+        const elementosPaginas = document.querySelectorAll("[data-tipo='pagina']");
+        function ativarBlues() {
+            console.log("Ativando azul...");
+            elementosLivros.forEach(el => el.classList.add("livros"));
+            elementosPaginas.forEach(el => el.classList.remove("pages"));
+        }
+
+        function ativarGreens() {
+            console.log("Ativando verde...");
+            elementosPaginas.forEach(el => el.classList.add("pages"));
+            elementosLivros.forEach(el => el.classList.remove("livros"));
+        }
+        elementosLivros.forEach(elemento => {
+            elemento.addEventListener('click', ativarBlues);
+        });
+
+        elementosPaginas.forEach(elemento => {
+            elemento.addEventListener('click', ativarGreens);
+        });
+    </script>
+</body>
+</html>
