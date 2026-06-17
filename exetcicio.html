@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>form{
+        display: grid;
+        grid-template-rows: repeat(10, 1fr);
+    }</style>
+</head>
+<body>
+    <form>
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <button>enviar</button>
+    </form>
+    <script>
+        /*converter dados a OL e exibir no html, dados vazios devem ter propriedade value, planejo usar if/else pros dados vazios, e get element by class para passar os dados para a OL*/
+        const form = document.getElementsByTagName("form")[0];
+        function send(){
+            const i=0;
+            const pega = document.getElementsByClassName("inputs");
+        pega.forEach(element => {
+            {
+            
+            }
+        });
+        };
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+        });
+    </script>
+</body>
+</html>
