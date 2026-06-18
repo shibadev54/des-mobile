@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="meuFormulario">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        <input type="text" class="inputs">
+        
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h3>Dados Enviados:</h3>
+    <ol id="ol"></ol>
+
+    <script>
+        const form = document.getElementById("meuFormulario");
+        const lista = document.getElementById("ol");
+
+        form.addEventListener('submit', function(event){
+            // 1. Impede a página de recarregar e sumir com os dados
+            event.preventDefault(); 
+            
+            // 2. Limpa a lista anterior para não acumular toda vez que clicar
+            lista.innerHTML = ""; 
+
+            // 3. Pega todos os inputs
+            const campos = document.getElementsByClassName("inputs");
+
+            // 4. Faz o loop por todos os inputs encontrados (campos.length)
+            for (let i = 0; i < campos.length; i++) {
+                const valor = campos[i].value.trim(); // .trim() remove espaços vazios extras
+                
+                // 5. Validação: Se estiver vazio, avisa e para a execução
+                if (valor === "") { 
+                    alert(`O campo número ${i + 1} está vazio!`);
+                    return; // O 'return' para o loop e a função na hora
+                }
+
+                // 6. Se tiver texto, cria o <li> e joga na <ol>
+                const novoItem = document.createElement("li");
+                novoItem.textContent = valor;
+                lista.appendChild(novoItem);
+            }
+        });
+    </script>
+</body>
+</html>
